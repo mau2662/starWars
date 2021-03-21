@@ -25,14 +25,8 @@ export const Navbar = () => {
 						</button>
 
 						<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a className="dropdown-item" href="#">
-								Action
-							</a>
-							<a className="dropdown-item" href="#">
-								Another action
-							</a>
-							<a className="dropdown-item" href="#">
-								Something else here
+							<a className="dropdown-item">
+								Grogu <i className="fas fa-trash" />
 							</a>
 						</div>
 					</div>

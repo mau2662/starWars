@@ -14,7 +14,7 @@ const Card = () => {
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</p>
 				<button type="button" className="btn btn-outline-primary">
-					Primary
+					Learn More
 				</button>
 
 				<button type="button" className="btn btn-outline-warning float-right">
