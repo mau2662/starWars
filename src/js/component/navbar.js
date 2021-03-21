@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../styles/home.scss";
 
 export const Navbar = () => {
 	return (
@@ -26,7 +27,7 @@ export const Navbar = () => {
 
 						<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
 							<a className="dropdown-item">
-								Grogu <i className="fas fa-trash" />
+								Grogu <i className="fas fa-trash float-right" />
 							</a>
 						</div>
 					</div>
