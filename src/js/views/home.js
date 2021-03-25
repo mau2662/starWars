@@ -7,6 +7,7 @@ export const Home = () => {
 		<div className="container">
 			<p className="h2 text-danger">Characters</p>
 			<div className="scrolling-wrapper-flexbox">
+				{/* aqui va el map de planetas */}
 				<Card> </Card>
 				<Card> </Card>
 				<Card> </Card>
@@ -18,6 +19,7 @@ export const Home = () => {
 
 			<p className="h2 text-danger mt-2">Planets</p>
 			<div className="scrolling-wrapper-flexbox">
+				{/* aqui va el map de los personajes */}
 				<Card> </Card>
 				<Card> </Card>
 				<Card> </Card>

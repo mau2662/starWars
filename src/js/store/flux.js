@@ -12,7 +12,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			planets: [],
+			characters: [],
+			favs: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -24,6 +27,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
 			},
+
+			loadPlanetInfo: () => {
+				const url = "https://www.swapi.tech/api/planets";
+				const requestOption = {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json"
+					}
+				};
+				fetch(url, requestOption)
+					.then(res => {
+						return res.json();
+					})
+					.then(data => {
+						// buscar en la api la propiedad de los planetas
+						setStore({ planets: data });
+					})
+					.catch(error => console.log("error" + error));
+			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
