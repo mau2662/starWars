@@ -28,25 +28,48 @@ const getState = ({ getStore, getActions, setStore }) => {
 				*/
 			},
 
-			loadPlanetInfo: () => {
+			loadPlanetInfo: async () => {
 				const url = "https://www.swapi.tech/api/planets";
 				const requestOption = {
 					method: "GET",
+					mode: "no-cors",
 					headers: {
 						"Content-Type": "application/json"
 					}
 				};
-				fetch(url, requestOption)
-					.then(res => {
-						return res.json();
-					})
-					.then(data => {
-						// buscar en la api la propiedad de los planetas
-						setStore({ planets: data });
-					})
-					.catch(error => console.log("error" + error));
+				let response = await fetch(url, requestOption);
+				let data = await response.json();
+				setStore({ planets: data.results });
+
+				// .then(res => {
+				// 	return res.json();
+				// })
+				// .then(data => {
+				// 	setStore({ planets: data.results });
+				// })
+				// .catch(error => console.log("error" + error));
 			},
 
+			loadCharacterInfo: async () => {
+				const url = "https://www.swapi.tech/api/people";
+				const requestOption = {
+					method: "GET",
+					mode: "no-cors",
+					headers: {
+						"Content-Type": "application/json"
+					}
+				};
+				let response = await fetch(url, requestOption);
+				let data = await response.json();
+				setStore({ characters: data.results });
+				// 		.then(res => {
+				// 			return res.json();
+				// 		})
+				// 		.then(data => {
+				// 			setStore({ characters: data.results });
+				// 		})
+				// 		.catch(error => console.log("error" + error));
+			},
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

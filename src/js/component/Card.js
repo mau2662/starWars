@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 const Card = props => {
 	return (
@@ -9,8 +10,7 @@ const Card = props => {
 				alt="..."
 			/>
 			<div className="card-body">
-				{/* aqui van los props */}
-				<h5 className="card-title">titulo</h5>
+				<h5 className="card-title">{props.title}</h5>
 				<p className="card-text">
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</p>
@@ -26,4 +26,7 @@ const Card = props => {
 	);
 };
 
+Card.propTypes = {
+	title: PropTypes.string
+};
 export default Card;
