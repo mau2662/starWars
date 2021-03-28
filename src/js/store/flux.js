@@ -32,7 +32,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const url = "https://www.swapi.tech/api/planets";
 				const requestOption = {
 					method: "GET",
-					mode: "no-cors",
 					headers: {
 						"Content-Type": "application/json"
 					}
@@ -47,14 +46,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				// .then(data => {
 				// 	setStore({ planets: data.results });
 				// })
-				// .catch(error => console.log("error" + error));
+				// .catch(error => console.log("error" + error)) ;
 			},
 
 			loadCharacterInfo: async () => {
 				const url = "https://www.swapi.tech/api/people";
 				const requestOption = {
 					method: "GET",
-					mode: "no-cors",
 					headers: {
 						"Content-Type": "application/json"
 					}
