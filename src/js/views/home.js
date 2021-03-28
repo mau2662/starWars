@@ -12,7 +12,7 @@ export const Home = () => {
 			<div className="scrolling-wrapper-flexbox">
 				{store.characters.map((characters, index) => {
 					return (
-						<Card key={index} title={characters.name}>
+						<Card key={index} title={characters.name} uid={characters.uid}>
 							{" "}
 						</Card>
 					);

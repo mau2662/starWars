@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { Link, useParams } from "react-router-dom";
 
 const Card = props => {
 	return (
@@ -11,13 +12,11 @@ const Card = props => {
 			/>
 			<div className="card-body">
 				<h5 className="card-title">{props.title}</h5>
-				<p className="card-text">
-					Some quick example text to build on the card title and make up the bulk of the cards content.
-				</p>
-				<button type="button" className="btn btn-outline-primary">
-					Learn More
-				</button>
-
+				<Link to={"/learnmore/" + props.uid}>
+					<button type="button" className="btn btn-outline-primary">
+						Learn More
+					</button>
+				</Link>
 				<button type="button" className="btn btn-outline-warning float-right">
 					&#x2661;
 				</button>
@@ -27,6 +26,7 @@ const Card = props => {
 };
 
 Card.propTypes = {
-	title: PropTypes.string
+	title: PropTypes.string,
+	uid: PropTypes.number
 };
 export default Card;
