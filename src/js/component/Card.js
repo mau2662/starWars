@@ -5,8 +5,7 @@ import { Link, useParams } from "react-router-dom";
 const Card = props => {
 	const favbutton = evento => {
 		if ((status = false)) {
-			return;
-			("&#x2661");
+			return "&#x2661";
 		} else {
 			return "&#x2665";
 		}
@@ -26,11 +25,7 @@ const Card = props => {
 					</button>
 				</Link>
 				<button type="button" className="btn btn-outline-warning float-right">
-					{
-						(onclick = evento => {
-							favbutton(evento);
-						})
-					}
+					&#x2661;
 				</button>
 			</div>
 		</div>

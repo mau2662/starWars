@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/home.scss";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
+
+	const handleDelete = item => {
+		actions.deleteFav(item);
+	};
+
+	const favorites = () => {
+		return store.favs.map((item, index) => {
+			return (
+				<a className="dropdown-item" key={index}>
+					{item}
+					<button
+						className="btn float-right"
+						onClick={evento => {
+							handleDelete(item);
+						}}>
+						{" "}
+						<i className="fas fa-trash" />{" "}
+					</button>
+				</a>
+			);
+		});
+	};
 	return (
 		<nav className="navbar navbar-light bg-light mb-3 ">
 			<div className="container">
@@ -22,13 +46,11 @@ export const Navbar = () => {
 							aria-haspopup="true"
 							aria-expanded="false">
 							Favorites
-							<span className="badge badge-light">0</span>
+							<span className="badge badge-light">{store.favs.length}</span>
 						</button>
 
 						<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a className="dropdown-item">
-								Grogu <i className="fas fa-trash float-right" />
-							</a>
+							{favorites()}
 						</div>
 					</div>
 				</div>

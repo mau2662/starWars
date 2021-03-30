@@ -15,7 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			planets: [],
 			characters: [],
-			favs: []
+			favs: ["a", "b", "c"]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -81,6 +81,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+
+			addFav: fav => {
+				setStore({ favs: getStore().favs.concat(fav) });
+			},
+
+			deleteFav: fav => {
+				const deleteArray = getStore().favs.filter(erase => {
+					return erase !== fav;
+				});
+				setStore({ favs: deleteArray });
 			}
 		}
 	};
