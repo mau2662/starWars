@@ -16,7 +16,7 @@ export const LearnMore = () => {
 		};
 		let response = await fetch(url, requestOption);
 		let data = await response.json();
-		setCharacter = data;
+		setCharacter(data);
 	};
 
 	useEffect(() => {
@@ -31,7 +31,7 @@ export const LearnMore = () => {
 				</div>
 				<div className="col-md-8">
 					<div className="card-body">
-						<h5 className="card-title">{Character.result.properties.name}</h5>
+						<h5 className="card-title">Hola</h5>
 						<p className="card-text">El id es {params.uid}</p>
 						<p className="card-text">
 							<small className="text-muted">Last updated 3 mins ago</small>

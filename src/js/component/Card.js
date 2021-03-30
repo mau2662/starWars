@@ -3,6 +3,14 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 
 const Card = props => {
+	const favbutton = evento => {
+		if ((status = false)) {
+			return;
+			("&#x2661");
+		} else {
+			return "&#x2665";
+		}
+	};
 	return (
 		<div className="card mr-5 mb-3 w-25">
 			<img
@@ -18,7 +26,11 @@ const Card = props => {
 					</button>
 				</Link>
 				<button type="button" className="btn btn-outline-warning float-right">
-					&#x2661;
+					{
+						(onclick = evento => {
+							favbutton(evento);
+						})
+					}
 				</button>
 			</div>
 		</div>
