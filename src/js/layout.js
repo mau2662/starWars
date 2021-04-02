@@ -9,6 +9,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import LearnMore from "./views/learnMore";
 import LearnMorePlanets from "./views/learnMorePlanets";
+import LearnMoreCharacter from "./views/learnMore";
 
 //create your first component
 const Layout = () => {
@@ -24,8 +25,8 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/learnmore/:uid">
-							<LearnMore />
+						<Route exact path="/learnmorecharacters/:uid">
+							<LearnMoreCharacter />
 						</Route>
 						<Route exact path="/learnmoreplanets/:uid">
 							<LearnMorePlanets />

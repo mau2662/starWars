@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 
-const Card = props => {
+const CardCharacters = props => {
 	const favbutton = evento => {
 		if ((status = false)) {
 			return "&#x2661";
@@ -19,7 +19,7 @@ const Card = props => {
 			/>
 			<div className="card-body">
 				<h5 className="card-title">{props.title}</h5>
-				<Link to={"/learnmore/" + props.uid}>
+				<Link to={"/learnmorecharacters/" + props.uid}>
 					<button type="button" className="btn btn-outline-primary">
 						Learn More
 					</button>
@@ -32,8 +32,8 @@ const Card = props => {
 	);
 };
 
-Card.propTypes = {
+CardCharacters.propTypes = {
 	title: PropTypes.string,
 	uid: PropTypes.number
 };
-export default Card;
+export default CardCharacters;

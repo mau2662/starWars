@@ -4,6 +4,7 @@ import "../../styles/home.scss";
 import Card from "../component/Card";
 import CardPlanets from "../component/CardPlanets";
 import { Context } from "../store/appContext";
+import CardCharacters from "../component/Card";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -13,9 +14,9 @@ export const Home = () => {
 			<div className="scrolling-wrapper-flexbox">
 				{store.characters.map((characters, index) => {
 					return (
-						<Card key={index} title={characters.name} uid={characters.uid}>
+						<CardCharacters key={index} title={characters.name} uid={characters.uid}>
 							{" "}
-						</Card>
+						</CardCharacters>
 					);
 				})}
 			</div>

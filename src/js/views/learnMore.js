@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-const LearnMore = () => {
+const LearnMoreCharacter = () => {
 	const params = useParams();
 	const [character, setCharacter] = useState({});
 	//Se crea el hook para ver el estado de la pagina, se inicia en true porque se esta cargando
@@ -87,4 +87,4 @@ const LearnMore = () => {
 	return <div> {showData()} </div>;
 };
 
-export default LearnMore;
+export default LearnMoreCharacter;
