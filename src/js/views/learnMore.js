@@ -14,15 +14,20 @@ const LearnMore = () => {
 					<div className="container">
 						<div className="card mb-3">
 							<div className="row no-gutters">
-								<div className="col-md-4">
-									<img src="..." alt="..." />
+								<div className="col-md-3">
+									<img
+										src="https://rock95.com/wp-content/uploads/2017/01/14137284401_4f06e9f8c6_z-400x200.jpg"
+										alt="..."
+										className="rounded float-left img-thumbnail"
+									/>
 								</div>
-								<div className="col-md-8">
-									<div className="card-body">
-										<h5 className="card-title">{character.result.properties.name}</h5>
-										<p className="card-text">El id es {params.uid}</p>
-										<p className="card-text">
-											<small className="text-muted">Last updated 3 mins ago</small>
+								<div className="col-md-9">
+									<div className="card-body float-right">
+										<h5 className="card-title text-center">{character.result.properties.name}</h5>
+										<p className="card-text text-center">
+											It is a long established fact that a reader will be distracted by the
+											readable content of a page when looking at its layout. The point of using
+											Lorem Ipsum is that it has a more-or-less normal distribution of letters.
 										</p>
 									</div>
 								</div>
@@ -30,32 +35,25 @@ const LearnMore = () => {
 						</div>
 					</div>
 
-					<table className="table table-borderless">
+					<table className="table table-borderless text-danger">
 						<thead>
 							<tr>
-								<th scope="col">#</th>
-								<th scope="col">First</th>
-								<th scope="col">Last</th>
-								<th scope="col">Handle</th>
+								<th scope="col text-danger">Name</th>
+								<th scope="col">Birth Year</th>
+								<th scope="col">Gender</th>
+								<th scope="col">Height</th>
+								<th scope="col">Skin Color</th>
+								<th scope="col">Eye Color</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<th scope="row">1</th>
-								<td>Mark</td>
-								<td>Otto</td>
-								<td>@mdo</td>
-							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>Jacob</td>
-								<td>Thornton</td>
-								<td>@fat</td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td colSpan="2">Larry the Bird</td>
-								<td>@twitter</td>
+								<td>{character.result.properties.name}</td>
+								<td>{character.result.properties.birth_year}</td>
+								<td>{character.result.properties.gender}</td>
+								<td>{character.result.properties.height}</td>
+								<td>{character.result.properties.skin_color}</td>
+								<td>{character.result.properties.eye_color}</td>
 							</tr>
 						</tbody>
 					</table>
