@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import Card from "../component/Card";
+import CardPlanets from "../component/CardPlanets";
 import { Context } from "../store/appContext";
 
 export const Home = () => {
@@ -24,9 +25,9 @@ export const Home = () => {
 				<div className="scrolling-wrapper-flexbox">
 					{store.planets.map((planets, index) => {
 						return (
-							<Card key={index} title={planets.name}>
+							<CardPlanets key={index} title={planets.name} uid={planets.uid}>
 								{" "}
-							</Card>
+							</CardPlanets>
 						);
 					})}
 				</div>
