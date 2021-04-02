@@ -21,7 +21,7 @@ const LearnMorePlanets = () => {
 								</div>
 								<div className="col-md-9">
 									<div className="card-body float-right">
-										<h5 className="card-title text-center">hola</h5>
+										<h5 className="card-title text-center">{planet.result.properties.name}</h5>
 										<p className="card-text text-center">
 											It is a long established fact that a reader will be distracted by the
 											readable content of a page when looking at its layout. The point of using
@@ -37,21 +37,21 @@ const LearnMorePlanets = () => {
 						<thead>
 							<tr>
 								<th scope="col text-danger">Name</th>
-								<th scope="col">Birth Year</th>
-								<th scope="col">Gender</th>
-								<th scope="col">Height</th>
-								<th scope="col">Skin Color</th>
-								<th scope="col">Eye Color</th>
+								<th scope="col">Diameter</th>
+								<th scope="col">Terrain</th>
+								<th scope="col">Created</th>
+								<th scope="col">Climate</th>
+								<th scope="col">Population</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>qwe</td>
-								<td>qwe</td>
-								<td>qe</td>
-								<td>er</td>
-								<td>trr</td>
-								<td>kk</td>
+								<td>{planet.result.properties.name}</td>
+								<td>{planet.result.properties.diameter}</td>
+								<td>{planet.result.properties.terrain}</td>
+								<td>{planet.result.properties.created}</td>
+								<td>{planet.result.properties.climate}</td>
+								<td>{planet.result.properties.population}</td>
 							</tr>
 						</tbody>
 					</table>
@@ -63,7 +63,7 @@ const LearnMorePlanets = () => {
 	};
 
 	const loadPlanet = async () => {
-		const url = "https://www.swapi.tech/api/planets" + params.uid;
+		const url = "https://www.swapi.tech/api/planets/" + params.uid;
 		const requestOption = {
 			method: "GET",
 			headers: {
