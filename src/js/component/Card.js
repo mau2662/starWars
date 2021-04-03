@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 const CardCharacters = props => {
-	const favbutton = evento => {
-		if ((status = false)) {
-			return "&#x2661";
-		} else {
-			return "&#x2665";
-		}
+	const { store, actions } = useContext(Context);
+
+	const handleAdd = item => {
+		actions.addFav(item);
 	};
+
 	return (
 		<div className="card mr-5 mb-3 w-25">
 			<img
@@ -24,7 +24,12 @@ const CardCharacters = props => {
 						Learn More
 					</button>
 				</Link>
-				<button type="button" className="btn btn-outline-warning float-right">
+				<button
+					type="button"
+					className="btn btn-outline-warning float-right"
+					onClick={evento => {
+						handleAdd(props.title);
+					}}>
 					&#x2661;
 				</button>
 			</div>
